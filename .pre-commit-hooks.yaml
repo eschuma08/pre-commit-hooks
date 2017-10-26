@@ -1,0 +1,6 @@
+-   id: beautify_cpp
+    name: C++ code formatter
+    description: C++ code formatter
+    entry: beautify_cpp
+    language: python
+    types: [c++, header]
