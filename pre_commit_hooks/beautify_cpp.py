@@ -8,7 +8,8 @@ def check( filenames ):
    script_path = os.path.realpath(__file__)
    bin_bath = os.path.join( os.path.dirname( os.path.abspath(script_path) ), '..', 'bin' )
    cfg_file = os.path.join( bin_bath, 'defaults.cfg' )
-   format_cpp( files_to_check, os.path.join( bin_bath, 'AStyle.exe'), ['--style=allman', '--dry-run'] )
+   #format_cpp( files_to_check, os.path.join( bin_bath, 'AStyle.exe'), ['--style=allman', '--dry-run'] )
+   format_cpp( files_to_check, os.path.join( bin_bath, 'AStyle.exe'), ['--style=allman'] )
    
    #for root, dirs, files in os.walk( os.path.join( os.path.dirname( os.path.abspath(script_path) ), '..') ):
    #   path = root.split(os.sep)
