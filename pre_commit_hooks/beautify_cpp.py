@@ -22,8 +22,10 @@ def check( filenames ):
    
    #format_cpp( files_to_check, os.path.join( bin_bath, 'uncrustify.exe'), ['-c', '{}'.format(cfg_file), '*.cpp' ] )
    exe = os.path.join( bin_bath, 'AStyle.exe')
-   ret = cmd_output( str(exe), '--style=google', '--indent=spaces', '--delete-empty-lines', '--pad-oper', '--pad-comma', '--pad-paren', '--pad-header',  '--max-code-length=80', '--close-templates', '--break-after-logical', '--lineend=linux', '--suffix=none'  )
-   
+   try:
+      ret = cmd_output( str(exe), '--style=google', '--indent=spaces', '--delete-empty-lines', '--pad-oper', '--pad-comma', '--pad-paren', '--pad-header',  '--max-code-length=80', '--close-templates', '--break-after-logical', '--lineend=linux', '--suffix=none', ' '.join( files_to_check )  )
+   except CalledProcessError:
+      pass
    print( 'Return value: {}'.format( ret ) )
 
    return 1
