@@ -11,8 +11,8 @@ class CalledProcessError(RuntimeError):
 
 
 def added_files():
-   return set(cmd_output( 'git', 'diff', '--staged', '--name-only', '--diff-filter=A', ).splitlines())
-
+   #return set(cmd_output( 'git', 'diff', '--staged', '--name-only', '--diff-filter=A', ).splitlines())
+   return set(cmd_output( 'git', 'diff', '--staged', '--name-only', ).splitlines())
 def format_cpp( file_list, executable, args ):
    #cmd = [ str(executable), '--style=allman', '--dry-run']
    cmd = [ str(executable) ] + args
