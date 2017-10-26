@@ -26,7 +26,7 @@ def check( filenames ):
    
    print( 'Return value: {}'.format( ret ) )
 
-   return 0
+   return 1
 
 
 def main(argv=None):
