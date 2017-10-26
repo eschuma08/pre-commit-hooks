@@ -2,6 +2,7 @@ import argparse
 import os
 from pre_commit_hooks.util import added_files
 from pre_commit_hooks.util import cmd_output
+from pre_commit_hooks.util import CalledProcessError
 
 def check( filenames ):
    #files_to_check = set([ str( os.path.abspath( filename )) for filename in filenames ]) + (added_files)
