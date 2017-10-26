@@ -3,4 +3,4 @@
     description: C++ code formatter
     entry: beautify_cpp
     language: python
-    types: [c++, header]
+    types: [c++, file]
