@@ -5,7 +5,7 @@ from pre_commit_hooks.util import format_cpp
 
 def check( filenames ):
    #files_to_check = set([ str( os.path.abspath( filename )) for filename in filenames ]) + (added_files)
-   files_to_check = (added_files) & set(filenames) 
+   files_to_check = added_files() & set(filenames) 
    script_path = os.path.realpath(__file__)
    bin_bath = os.path.join( os.path.dirname( os.path.abspath(script_path) ), '..', 'bin' )
    cfg_file = os.path.join( bin_bath, 'defaults.cfg' )
