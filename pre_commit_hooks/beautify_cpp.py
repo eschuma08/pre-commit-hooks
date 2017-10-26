@@ -8,9 +8,10 @@ def check( filenames ):
    files_to_check = added_files() & set(filenames) 
    script_path = os.path.realpath(__file__)
    bin_bath = os.path.join( os.path.dirname( os.path.abspath(script_path) ), '..', 'bin' )
-   cfg_file = os.path.join( bin_bath, 'defaults.cfg' )
+   #cfg_file = os.path.join( bin_bath, 'defaults.cfg' )
    #format_cpp( files_to_check, os.path.join( bin_bath, 'AStyle.exe'), ['--style=allman', '--dry-run'] )
-   format_cpp( files_to_check, os.path.join( bin_bath, 'AStyle.exe'), ['--style=google', '--indent=spaces', '--delete-empty-lines', '--pad-oper', '--pad-comma', '--pad-paren', '--pad-header',  '--max-code-length=80', '--close-templates', '--break-after-logical', '--lineend=linux', '--suffix=none'] )
+   
+   #    format_cpp( files_to_check, os.path.join( bin_bath, 'AStyle.exe'), ['--style=google', '--indent=spaces', '--delete-empty-lines', '--pad-oper', '--pad-comma', '--pad-paren', '--pad-header',  '--max-code-length=80', '--close-templates', '--break-after-logical', '--lineend=linux', '--suffix=none'] )
    
    #for root, dirs, files in os.walk( os.path.join( os.path.dirname( os.path.abspath(script_path) ), '..') ):
    #   path = root.split(os.sep)
@@ -20,6 +21,11 @@ def check( filenames ):
    
    
    #format_cpp( files_to_check, os.path.join( bin_bath, 'uncrustify.exe'), ['-c', '{}'.format(cfg_file), '*.cpp' ] )
+   exe = os.path.join( bin_bath, 'AStyle.exe')
+   ret = cmd_output( str(exe), '--style=google', '--indent=spaces', '--delete-empty-lines', '--pad-oper', '--pad-comma', '--pad-paren', '--pad-header',  '--max-code-length=80', '--close-templates', '--break-after-logical', '--lineend=linux', '--suffix=none'  )
+   
+   print( 'Return value: {}'.format( ret ) )
+
    return 0
 
 
