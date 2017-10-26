@@ -29,6 +29,7 @@ def check( filenames ):
    try:
 #      ret = cmd_output( str(exe), '--style=google', '--indent=spaces', '--delete-empty-lines', '--pad-oper', '--pad-comma', '--pad-paren', '--pad-header',  '--max-code-length=80', '--close-templates', '--break-after-logical', '--lineend=linux', '--suffix=none', ' '.join( files_to_check )  )
       ret = cmd_output( *args )
+      print( 'Return value = {}',format(ret) )
    except CalledProcessError:
       pass
 
