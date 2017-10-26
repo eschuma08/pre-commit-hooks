@@ -10,7 +10,7 @@ def check( filenames ):
    bin_bath = os.path.join( os.path.dirname( os.path.abspath(script_path) ), '..', 'bin' )
    cfg_file = os.path.join( bin_bath, 'defaults.cfg' )
    #format_cpp( files_to_check, os.path.join( bin_bath, 'AStyle.exe'), ['--style=allman', '--dry-run'] )
-   format_cpp( files_to_check, os.path.join( bin_bath, 'AStyle.exe'), ['--style=allman'] )
+   format_cpp( files_to_check, os.path.join( bin_bath, 'AStyle.exe'), ['--style=google', '--indent=spaces', '--attach-namespace', '--max-code-length=80', '--break-after-logical', '--lineend=linux'] )
    
    #for root, dirs, files in os.walk( os.path.join( os.path.dirname( os.path.abspath(script_path) ), '..') ):
    #   path = root.split(os.sep)
