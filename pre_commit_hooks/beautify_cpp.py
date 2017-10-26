@@ -23,7 +23,7 @@ def check( filenames ):
    
    #format_cpp( files_to_check, os.path.join( bin_bath, 'uncrustify.exe'), ['-c', '{}'.format(cfg_file), '*.cpp' ] )
    exe = os.path.join( bin_bath, 'AStyle.exe')
-   args = set([str(exe), '--style=google', '--indent=spaces',  '--max-code-length=80']) & files_to_check
+   args = [str(exe), '--style=google', '--indent=spaces',  '--max-code-length=80'] + [ file for file in files_to_check ]
    try:
 #      ret = cmd_output( str(exe), '--style=google', '--indent=spaces', '--delete-empty-lines', '--pad-oper', '--pad-comma', '--pad-paren', '--pad-header',  '--max-code-length=80', '--close-templates', '--break-after-logical', '--lineend=linux', '--suffix=none', ' '.join( files_to_check )  )
       ret = cmd_output( *args )
