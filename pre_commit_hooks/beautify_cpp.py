@@ -33,7 +33,7 @@ def check( filenames ):
    except CalledProcessError:
       pass
 
-   return 1
+   return 0
 
 
 def main(argv=None):
