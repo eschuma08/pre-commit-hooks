@@ -6,7 +6,8 @@ from pre_commit_hooks.util import CalledProcessError
 
 def check( filenames ):
    #files_to_check = set([ str( os.path.abspath( filename )) for filename in filenames ]) + (added_files)
-   files_to_check = added_files() & set(filenames) 
+   files_to_check = added_files() # & set(filenames) 
+   
    print ('files_to_check: {}'.format(files_to_check) )
    script_path = os.path.realpath(__file__)
    bin_bath = os.path.join( os.path.dirname( os.path.abspath(script_path) ), '..', 'bin' )
